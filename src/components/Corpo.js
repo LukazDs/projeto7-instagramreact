@@ -1,163 +1,112 @@
+import Acoes from "./Acoes";
+
 export default function Corpo() {
 
     function Esquerda() {
 
+        function Story(props) {
+            return (
+                    <div class="story">
+                        <div class="imagem">
+                            <img src={props.img} />
+                        </div>
+                        <div class="usuario">
+                            {props.name}
+                        </div>
+                    </div>
+            )
+        }
+
         function Stories() {
+
+            const adress = [
+                    {src:"./assets/img/9gag.svg", user: "9gag"},
+                    {src:"./assets/img/meowed.svg", user: "meowed"},
+                    {src:"./assets/img/barked.svg", user: "barked"},
+                    {src:"./assets/img/nathanwpylestrangeplanet.svg", user: "nathanwpylestrangeplanet"},
+                    {src:"./assets/img/wawawicomics.svg", user: "wawawicomics"},
+                    {src:"./assets/img/respondeai.svg", user: "respondeai"},
+                    {src:"./assets/img/filomoderna.svg", user: "filomoderna"},
+                    {src:"./assets/img/memeriagourmet.svg", user: "memeriagourmet"},
+                ];
+
             return (
                 <div class="stories">
-                    <div class="story">
-                        <div class="imagem">
-                            <img src="./assets/img/9gag.svg" />
-                        </div>
-                        <div class="usuario">
-                            9gag
-                        </div>
-                    </div>
-
-                    <div class="story">
-                        <div class="imagem">
-                            <img src="./assets/img/meowed.svg" />
-                        </div>
-                        <div class="usuario">
-                            meowed
-                        </div>
-                    </div>
-
-                    <div class="story">
-                        <div class="imagem">
-                            <img src="./assets/img/barked.svg" />
-                        </div>
-                        <div class="usuario">
-                            barked
-                        </div>
-                    </div>
-
-                    <div class="story">
-                        <div class="imagem">
-                            <img src="./assets/img/nathanwpylestrangeplanet.svg" />
-                        </div>
-                        <div class="usuario">
-                            nathanwpylestrangeplanet
-                        </div>
-                    </div>
-
-                    <div class="story">
-                        <div class="imagem">
-                            <img src="./assets/img/wawawicomics.svg" />
-                        </div>
-                        <div class="usuario">
-                            wawawicomics
-                        </div>  
-                    </div>
-                    
-                    <div class="story">
-                        <div class="imagem">
-                            <img src="./assets/img/respondeai.svg" />
-                        </div>
-                        <div class="usuario">
-                            respondeai
-                        </div>
-                    </div>
-
-                    <div class="story">
-                        <div class="imagem">
-                            <img src="./assets/img/filomoderna.svg" />
-                        </div>
-                        <div class="usuario">
-                            filomoderna
-                        </div>
-                    </div>
-
-                    <div class="story">
-                        <div class="imagem">
-                            <img src="./assets/img/memeriagourmet.svg" />
-                        </div>
-                        <div class="usuario">
-                            memeriagourmet
-                        </div>
-                    </div>
+                
+                    {adress.map((element) => (<Story img={element.src} name={element.user} />))}
 
                     <div class="setinha">
-                    <   ion-icon name="chevron-forward-circle"></ion-icon>
+                        <ion-icon name="chevron-forward-circle"></ion-icon>
+                    </div>
+                </div>
+            )
+        }
+
+        function Post(props) {
+
+            // function LikePost() {
+            //     setHeart("heart");
+            //     setLike("red");
+            //     if(heart === "heart") {
+            //         setHeart("heart-outline");
+            //         setHeart("black");
+            //     }
+            // }
+                    
+            return (
+                <div class="post">
+                    <div class="topo">
+                        <div class="usuario">
+                            <img src={props.userimg}/>
+                            {props.username}
+                        </div>
+                        <div class="acoes">
+                            <ion-icon name="ellipsis-horizontal"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="conteudo">
+                        <img src={props.contentimg} />
+                    </div>
+
+                    <div class="fundo">
+                        <Acoes />
+                        
+                        <div class="curtidas">
+                            <img src={props.likesrc}/>
+                            <div class="texto">
+                                Curtido por <strong>{props.liketext}</strong> e <strong>outras {props.likenumber} pessoas</strong>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )
         }
 
         function Posts() {
+
+            const posts = [
+                {
+                    userSrc:"./assets/img/meowed.svg", 
+                    userName: "meowed", 
+                    contentSrc: "./assets/img/gato-telefone.svg",
+                    likeSrc: "./assets/img/respondeai.svg",
+                    likeText: "respondeai",
+                    likeNumber: "101.523",
+                },
+                {
+                    userSrc:"./assets/img/barked.svg", 
+                    userName: "barked", 
+                    contentSrc: "./assets/img/dog.svg",
+                    likeSrc: "./assets/img/adorable_animals.svg",
+                    likeText: "adorable_animals",
+                    likeNumber: "99.159",
+                }
+            ]
+
             return (
                 <div class="posts">
-                    <div class="post">
-                        <div class="topo">
-                            <div class="usuario">
-                                <img src="./assets/img/meowed.svg" />
-                                meowed
-                            </div>
-                            <div class="acoes">
-                                <ion-icon name="ellipsis-horizontal"></ion-icon>
-                            </div>
-                        </div>
-
-                        <div class="conteudo">
-                            <img src="./assets/img/gato-telefone.svg" />
-                        </div>
-
-                        <div class="fundo">
-                            <div class="acoes">
-                                <div>
-                                    <ion-icon name="heart-outline"></ion-icon>
-                                    <ion-icon name="chatbubble-outline"></ion-icon>
-                                    <ion-icon name="paper-plane-outline"></ion-icon>
-                                </div>
-                                <div>
-                                    <ion-icon name="bookmark-outline"></ion-icon>
-                                </div>
-                            </div>
-
-                            <div class="curtidas">
-                                <img src="./assets/img/respondeai.svg" />
-                                <div class="texto">
-                                    Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <div class="topo">
-                            <div class="usuario">
-                                <img src="./assets/img/barked.svg" />
-                                barked
-                            </div>
-                            <div class="acoes">
-                                <ion-icon name="ellipsis-horizontal"></ion-icon>
-                            </div>
-                        </div>
-
-                        <div class="conteudo">
-                            <img src="assets/img/dog.svg" />
-                        </div>
-
-                        <div class="fundo">
-                            <div class="acoes">
-                                <div>
-                                    <ion-icon name="heart-outline"></ion-icon>
-                                    <ion-icon name="chatbubble-outline"></ion-icon>
-                                    <ion-icon name="paper-plane-outline"></ion-icon>
-                                </div>
-                                <div>
-                                    <ion-icon name="bookmark-outline"></ion-icon>
-                                </div>
-                            </div>
-
-                            <div class="curtidas">
-                                <img src="./assets/img/adorable_animals.svg" />
-                                <div class="texto">
-                                    Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   {posts.map((element) => <Post userimg={element.userSrc} username={element.userName} contentimg={element.contentSrc} likesrc={element.likeSrc} likenumber={element.likeNumber}/>)}
                 </div>
             )
         }
@@ -173,86 +122,70 @@ export default function Corpo() {
 
     function Sidebar() {
 
-        function Usuario() {
+        function Usuario(props) {
             return (
                 <div class="usuario">
-                    <img src="./assets/img/catanacomics.svg" />
+                    <img src={props.imgsrc}/>
                     <div class="texto">
-                    <strong>catanacomics</strong>
-                    Catana
+                    <strong>{props.username}</strong>
+                    {props.usertext}
                     </div>
                 </div>
             )
 
         }
 
+        function Sugestao(props) {
+            return (
+                     <div class="sugestao">
+                        <div class="usuario">
+                            <img src={props.userimg} />
+                            <div class="texto">
+                                <div class="nome">{props.username}</div>
+                                <div class="razao">Segue você</div>
+                            </div>
+                        </div>
+
+                        <div class="seguir">Seguir</div>
+                    </div>
+            )
+        }
+
         function Sugestoes() {
+
+            const suggestions = 
+                [
+                    {
+                        userImg: "./assets/img/bad.vibes.memes.svg",
+                        userName: "bad.vibes.memes",
+                    },
+                    {
+                        userImg: "./assets/img/chibirdart.svg",
+                        userName: "chibirdart",
+                    },
+                    {
+                        userImg: "./assets/img/razoesparaacreditar.svg",
+                        userName: "razoesparaacreditar",
+                    },
+                    {
+                        userImg: "./assets/img/adorable_animals.svg",
+                        userName: "adorable_animals",
+                    },
+                    {
+                        userImg: "./assets/img/smallcutecats.svg",
+                        userName: "smallcutecats",
+                    },
+                ]
+
             return (
                 <div class="sugestoes">
                     <div class="titulo">
-                    Sugestões para você
-                    <div>Ver tudo</div>
+                        Sugestões para você
+                        <div>Ver tudo</div>
                     </div>
 
-                    <div class="sugestao">
-                    <div class="usuario">
-                        <img src="./assets/img/bad.vibes.memes.svg" />
-                        <div class="texto">
-                        <div class="nome">bad.vibes.memes</div>
-                        <div class="razao">Segue você</div>
-                        </div>
-                    </div>
+                    {suggestions.map(element => <Sugestao userimg={element.userImg} username={element.userName}/>)}
 
-                    <div class="seguir">Seguir</div>
-                    </div>
-
-                    <div class="sugestao">
-                    <div class="usuario">
-                        <img src="./assets/img/chibirdart.svg" />
-                        <div class="texto">
-                        <div class="nome">chibirdart</div>
-                        <div class="razao">Segue você</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                    </div>
-
-                    <div class="sugestao">
-                    <div class="usuario">
-                        <img src="./assets/img/razoesparaacreditar.svg" />
-                        <div class="texto">
-                        <div class="nome">razoesparaacreditar</div>
-                        <div class="razao">Novo no Instagram</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                    </div>
-
-                    <div class="sugestao">
-                    <div class="usuario">
-                        <img src="./assets/img/adorable_animals.svg" />
-                        <div class="texto">
-                        <div class="nome">adorable_animals</div>
-                        <div class="razao">Segue você</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                    </div>
-
-                    <div class="sugestao">
-                    <div class="usuario">
-                        <img src="./assets/img/smallcutecats.svg" />
-                        <div class="texto">
-                        <div class="nome">smallcutecats</div>
-                        <div class="razao">Segue você</div>
-                        </div>
-                    </div>
-
-                    <div class="seguir">Seguir</div>
-                    </div>
                 </div>
             )
         }
@@ -276,7 +209,7 @@ export default function Corpo() {
         }
         return (
             <div class="sidebar">
-                <Usuario />
+                <Usuario imgsrc="./assets/img/catanacomics.svg" username="catanacomics" usertext="Catana" />
                 <Sugestoes />
                 <Links />
                 <Copyright />
