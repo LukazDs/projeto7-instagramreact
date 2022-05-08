@@ -7,33 +7,33 @@ export default function NavBar() {
                 <div class="separador"></div>
                 <img src="./assets/img/logo.png" />
             </div>
-        )
-    }
+        );
+    };
 
     function LogoMobile() {
         return (
             <div class="logo-mobile">
                 <ion-icon name="logo-instagram"></ion-icon>
             </div>
-        )
-    }
+        );
+    };
 
     function InstagramMobile() {
         return (
             <div class="instagram-mobile">
                 <img src="./assets/img/logo.png" />
             </div>
-        )
-    }
+        );
+    };
 
     function Pesquisa() {
         return (
             <div class="pesquisa">
                 <input type="text" placeholder="Pesquisar" />
             </div>
-        )
+        );
 
-    }
+    };
     
     function Icones() {
         return (
@@ -43,16 +43,16 @@ export default function NavBar() {
                 <ion-icon name="heart-outline"></ion-icon>
                 <ion-icon name="person-outline"></ion-icon>
             </div>
-        )
-    }
+        );
+    };
 
     function IconesMobile() {
         return (
             <div class="icones-mobile">
                 <ion-icon name="paper-plane-outline"></ion-icon>
             </div>
-        )
-    }
+        );
+    };
 
     return (
     <div class="navbar">
@@ -65,5 +65,5 @@ export default function NavBar() {
             <IconesMobile />
         </div>
     </div>
-    )
-}
+    );
+};

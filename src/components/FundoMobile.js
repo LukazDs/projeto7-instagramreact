@@ -1,11 +1,17 @@
+import Icon from "./Icon";
+
 export default function FundoMobile () {
+    const icones = [
+        "home", 
+        "search-outline", 
+        "add-circle-outline",
+        "heart-outline", 
+        "person-outline"
+    ];
+
     return (
         <div class="fundo-mobile">
-            <ion-icon name="home"></ion-icon>
-            <ion-icon name="search-outline"></ion-icon>
-            <ion-icon name="add-circle-outline"></ion-icon>
-            <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="person-outline"></ion-icon>
+           {icones.map((icon) => <Icon name={icon} />)}
         </div>
-    )
-}
+    );
+};
