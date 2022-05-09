@@ -23,7 +23,7 @@ export default function Posts() {
 
     return (
         <div class="posts">
-           {posts.map((element) => <Post userimg={element.userSrc} username={element.userName} contentimg={element.contentSrc} likesrc={element.likeSrc} likenumber={element.likeNumber}/>)}
+           {posts.map((element) => <Post userimg={element.userSrc} username={element.userName} contentimg={element.contentSrc} likesrc={element.likeSrc} liketext={element.likeText} likenumber={element.likeNumber}/>)}
         </div>
     )
 };
